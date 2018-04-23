@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8">
+   <link href="style.css" rel="stylesheet">
+   <title>POW</title>
+</head>
+<body>
+<h1>POW</h1>
+<p id="score"></p>
+<div id="size-bloc">
+   <p id="size-title">Size : </p>
+   <input id="size" type="number" value="4">
+   <input id="change-size" type="button" value="Ok">
+   <div class="clear"></div>
+</div>
+<div id="num-bloc">
+   <p id="num-title">Number : </p>
+   <input id="num" type="number" value="2">
+   <input id="change-num" type="button" value="Ok">
+   <div class="clear"></div>
+</div>
+<div><center>
+    <input id="starttimer" type="button" value="Start" onclick="startClock()">
+    <input id="stoptimer" type="button" value="Quit" onclick="stopClock()"></center></div>
+<script>
+    // var countDownDate ;
+    // //= localStorage.getItem('startDate');
+    // if (countDownDate) {
+    //     countDownDate = new Date(countDownDate);
+    // } else {
+    //     countDownDate = new Date();
+    //     localStorage.setItem('startDate', countDownDate);
+    // } 
+    // Update the count down every 1 second
+    // var x = setInterval(function() {
+     
+    //     // Get todays date and time
+    //     var now = new Date().getTime();
+     
+    //     // Find the distance between now an the count down date
+    //     var distance = now - countDownDate.getTime();
+     
+    //     // Time calculations for days, hours, minutes and seconds
+    //     //var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    //     //var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+     
+    //     // Output the result in an element with id="demo"
+    //     document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
+    // }, 1000);
+    
+</script>
+<center><p id="demo"></p></center>
+<div id="canvas-block">
+   <canvas id="canvas" width="500" height="500"></canvas>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

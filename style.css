@@ -1,0 +1,62 @@
+body{
+    background-color: darkslategrey;
+ }
+ 
+ p{
+    color: antiquewhite;
+    font-size: 20px;
+ }
+ 
+ h1{
+    text-align: center;
+ }
+ 
+ #score{
+    text-align: center;
+ }
+ 
+ .clear{
+    clear: both;
+ }
+ #size-bloc{
+    margin-left: -50px;
+    padding-left: 50%;
+ }
+ 
+ #size-title{
+    float: left;
+    margin-top: 0px;
+ }
+ 
+ #size{
+    width: 50px;
+    margin-left: 10px;
+    border-radius: 3px;
+ }
+ 
+ #num-bloc{
+    margin-left: -50px;
+    padding-left: 50%;
+ }
+ 
+ #num-title{
+    float: left;
+    margin-top: 0px;
+ }
+ 
+ #num{
+    width: 50px;
+    margin-left: 10px;
+    border-radius: 3px;
+ }
+ 
+ #canvas{
+    background-color: white;
+ }
+ 
+ #canvas-block{
+    margin-left: -250px;
+    padding-left: 50%;
+ }
+ 
+ 

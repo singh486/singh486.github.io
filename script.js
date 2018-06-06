@@ -13,6 +13,7 @@ var width = canvas.width / size - 6;
 var cells = [];
 var fontSize;
 var loss = false;
+var start = false;
 startGame();
 
 changeSize.onclick = function () {
@@ -33,6 +34,7 @@ changeNum.onclick = function () {
        score = 0;
        canvasClean();
        startGame();
+   //    start = false;
    }
 }
 
@@ -75,16 +77,17 @@ function drawCell(cell) {
    }
    ctx.fill();
    var x = cell.value;
-   if(x < Math.pow(num,10))
+   if(x < Math.pow(num,5))
        fontSize = width/2;
    else
-       fontSize = width/3;
+       fontSize = (width/num)*2;
    if (cell.value) {
        ctx.font = fontSize + 'px Arial';
        ctx.fillStyle = 'white';
        ctx.textAlign = 'center';
-       ctx.fillText(cell.value, cell.x + width / 2, cell.y + width / 2 + width/7);
-   }
+        ctx.fillText(cell.value, cell.x + width / 2, cell.y + width / 2 + width/7);
+  }
+       
 
 }
 
@@ -93,7 +96,7 @@ function canvasClean() {
 }
 
 document.onkeydown = function (event) {
-   //if (!loss) {
+   if (start) {
        if (event.keyCode === 38 || event.keyCode === 87) {
            moveUp();
        } else if (event.keyCode === 39 || event.keyCode === 68) {
@@ -104,7 +107,7 @@ document.onkeydown = function (event) {
            moveLeft();
        }
        scoreLabel.innerHTML = 'Score : ' + score;
-   //}
+   }
 }
 
 function startGame() {
@@ -112,6 +115,7 @@ function startGame() {
     scoreLabel.innerHTML = 'Score : ' + score;
     createCells();
    drawAllCells();
+   start = true;
 //    pasteNewCell();
 //    pasteNewCell();
    //startClock();
@@ -125,6 +129,7 @@ function finishGame() {
    //document.getElementById("demo").innerHTML = "";
   //stopCount();
   //clearInterval(stop);
+  start = false;
   if(stop){
     clearInterval(stop);
     stop = null;
@@ -199,6 +204,7 @@ function pasteNewCell() {
 }
 
 function moveRight () {
+    if(start){
    var i, j;
    var col;
    for(i = 0; i < size; i++) {
@@ -224,8 +230,10 @@ function moveRight () {
    }
    pasteNewCell();
 }
+}
 
 function moveLeft() {
+    if(start){
    var i, j;
    var col;
    for(i = 0; i < size; i++) {
@@ -251,8 +259,10 @@ function moveLeft() {
    }
    pasteNewCell();
 }
+}
 
 function moveUp() {
+    if(start){
    var i, j, row;
    for(j = 0; j < size; j++) {
        for(i = 1; i < size; i++) {
@@ -277,8 +287,10 @@ function moveUp() {
    }
    pasteNewCell();
 }
+}
 
 function moveDown() {
+    if(start){
    var i, j, row;
    for(j = 0; j < size; j++) {
        for(i = size - 2; i >= 0; i--) {
@@ -302,6 +314,7 @@ function moveDown() {
        }
    }
    pasteNewCell();
+}
 }
 var t;
 var timer_is_on = 0;
@@ -391,15 +404,10 @@ function timer(){
 
 
 function startClock(){
-    // if(!stop){ 
-    //     stop = setInterval(timer(), 1000);
-    // }
     canvas.style.opacity = '1';
     clearTimeout(stop);
     score = 0;
     startGame();
-    //createCells();
-   // drawAllCells();
     pasteNewCell();
     pasteNewCell();
     timer();

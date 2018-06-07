@@ -20,7 +20,7 @@ body{
     background-color: wheat;
  }
 
- @media only screen and (min-width: 600px) {
+ @media (min-width: 320px) and (max-width: 480px) {
     /* For mobile phones: */
     .button{
         visibility: visible;

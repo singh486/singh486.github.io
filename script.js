@@ -77,7 +77,7 @@ function drawCell(cell) {
    }
    ctx.fill();
    var x = cell.value;
-   if(x < Math.pow(num,5))
+   if(x <= Math.pow(num,5))
        fontSize = width/2;
    else
        fontSize = (width/num)*2;
@@ -108,6 +108,22 @@ document.onkeydown = function (event) {
        }
        scoreLabel.innerHTML = 'Score : ' + score;
    }
+}
+
+document.getElementById('up').onclick = () =>{
+    moveUp()
+}
+
+document.getElementById('down').onclick = () =>{
+    moveDown()
+}
+
+document.getElementById('left').onclick = () =>{
+    moveLeft()
+}
+
+document.getElementById('right').onclick = () =>{
+    moveRight()
 }
 
 function startGame() {
@@ -325,23 +341,8 @@ function stopClock(){
     alert("Thanks for playing!");
     startGame();
 }
-// var x;
-// function startCount(){
-//   // if(!timer_is_on){
-//            timer_is_on = 1;
-//            timer();
-//   // }
-// }
-// function stopCount(){
-//    // clearInterval(t, 5000);
-//     setTimeout(timer(), 1000);
-//    //clearTimeout(t);
-//     timer_is_on = 0;
-// }
-function timer(){
-    
 
-    
+function timer(){
     //if(!stop){
         var countDownDate ;
         //= localStorage.getItem('startDate');
@@ -379,29 +380,7 @@ function timer(){
             }, 10);
         //}
         // }, 1000);
-        
-        
 }
-
-
-// function stopTimer(){
-//     clearInterval(x);
-//     return;
-// }
-
-// function canMove(){
-//     var i, j, row;
-//     var pair=0;
-//     for(i = 0; i < size-1; i++) {
-//         for(j = 0; j < size-1; j++) {
-//             if(cells[i][j].value == cells[i][j+1].value || cells[i][j].value == cells[i+1][j].value) {
-//                 pair++;
-//             }
-//         }
-//     }
-//     console.log(pair);
-// }
-
 
 function startClock(){
     canvas.style.opacity = '1';

@@ -10,7 +10,23 @@ body{
  h1{
     text-align: center;
  }
+
+ .wrapper{
+     text-align: center;
+ }
  
+ .button{
+    visibility: hidden;
+    background-color: wheat;
+ }
+
+ @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .button{
+        visibility: visible;
+    }
+}
+
  #score{
     text-align: center;
  }
@@ -58,5 +74,7 @@ body{
     margin-left: -250px;
     padding-left: 50%;
  }
+
+
  
  

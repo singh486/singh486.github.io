@@ -25,6 +25,7 @@ body{
     .button{
         width: 100px;
         height: 80px;
+        font-size: 30px;
         visibility: visible;
     }
 }
